@@ -20,9 +20,9 @@ unit UInicial;
 interface
 //-----------------------------------------------------------------------------------------------
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Menus, StdCtrls, Buttons, ExtCtrls, WinTypes, WinProcs, PicClip, Grids, DBGrids, ComCtrls, SID,
-  ToolWin, Dblogdlg, UProduto, UCliente, UPedidoExpedicao, UFunGeral;
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Menus, StdCtrls,
+  Buttons, ExtCtrls, WinTypes, WinProcs, Grids, DBGrids, ComCtrls, ToolWin, Dblogdlg, UProduto,
+  UCliente, UPedidoExpedicao, UFunGeral;
 //-----------------------------------------------------------------------------------------------
 type
   TFInicial = class(TForm)
@@ -109,7 +109,6 @@ type
   public
 	 { Public declarations }
 	 procedure alterarContadorVendedorAtivo(qualContadorVendedorAtivo:integer);
-	 procedure iniciarBina;
 	 function verificarSeFormEstaAberto(qualCaptionForm:String):boolean;
 	 function fornecerContadorVendedorAtivo:integer;
 	 procedure chamarRelatorioComissaoDoEntregador(p_CdEntregador: integer);
@@ -140,7 +139,6 @@ begin
 	if not verificarSeFormEstaAberto('frmPedido') then
 	begin
 		Application.createForm(TfrmPedido,frmPedido);
-		iniciarBina;
 	end
 	else
 	begin
@@ -189,10 +187,8 @@ begin
 	try
 		if not verificarSeFormEstaAberto('FSobre') then begin
 			Application.createForm(TfrmSobre,frmSobre);
-			frmSobre.setarDadosEmpresa(FTabTele.retornarVarEmailEmpresa,FTabTele.retornarVarWebSiteEmpresa);
 			frmSobre.ShowModal();
 		end else begin
-			frmSobre.setarDadosEmpresa(FTabTele.retornarVarEmailEmpresa,FTabTele.retornarVarWebSiteEmpresa);
 			frmSobre.ShowModal();
 		end;
 	except
@@ -242,7 +238,6 @@ end;
 //-----------------------------------------------------------------------------------------------
 procedure TFInicial.FormShow(Sender: TObject);
 begin
-	iniciarBina;
 	Caption := Application.Title+' - '+NOMEEMPRESA;
 	Application.CreateForm(TfrmLicenca, frmLicenca);
 	frmLicenca.setarParametros(1,20,25,4,24,23,23,22,2,8,14,18);
@@ -257,19 +252,6 @@ begin
 	if not (frmLicenca.retornarRegistro(true)) then frmLicenca.mostrarMsgPedidoDeRegistro();
 
 //	FTabTele.cadastrarClienteTemporario();
-end;
-//-----------------------------------------------------------------------------------------------
-//-- abre porta p/ receber dados da bina
-procedure TFInicial.iniciarBina;
-begin
-  if (FTabTele.retornarVariavelBool('UsaBina','0')) then begin
-	 try
-		if not AbreComPort(StrToInt(FTabTele.retornarVariavel('PortaBina','1'))) then ShowMessage('Erro na Abertura da Porta ');
-		SIDObj.OnInicioChamada := frmPedido.InicioChamada;
-	 except
-		MessageDlg('Erro ao inicializar bina!', mtError, [mbOk], 0);
-	 end;
-  end;
 end;
 //-----------------------------------------------------------------------------------------------
 procedure TFInicial.sm1BlocoDeNotasClick(Sender: TObject);

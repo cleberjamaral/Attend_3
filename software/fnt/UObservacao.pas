@@ -21,7 +21,7 @@ interface
 //-----------------------------------------------------------------------------------------------
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, DB, DBTables, DBCtrls, Mask, RXCtrls, RxLookup, Menus, UFunDB,
+  StdCtrls, ExtCtrls, DB, DBTables, DBCtrls, Mask, Menus, UFunDB,
   Spin, Buttons;
 //-----------------------------------------------------------------------------------------------
 type

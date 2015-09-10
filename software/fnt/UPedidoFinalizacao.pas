@@ -22,9 +22,9 @@ unit UPedidoFinalizacao;
 interface
 //-----------------------------------------------------------------------------------------------
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, DBCtrls, Buttons, ToolEdit, Menus, DB, DBTables, Grids,
-  DBGrids, ComCtrls, Printers, ToolWin, ClipBrd, ImgList, UImpPedi, Spin, UFunDB, Mask, UFunGeral;
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, ExtCtrls,
+  DBCtrls, Buttons, Menus, DB, DBTables, Grids, DBGrids, ComCtrls, Printers, ToolWin, ClipBrd,
+  ImgList, UImpPedi, Spin, UFunDB, Mask, UFunGeral;
 //-----------------------------------------------------------------------------------------------
 type
   TfrmPedidoFinalizacao = class(TForm)

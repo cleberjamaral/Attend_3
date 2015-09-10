@@ -168,7 +168,6 @@ end;
 //-----------------------------------------------------------------------------------------------
 procedure TFTabTele.TabelasCreate(Sender: TObject);
 var	dataBancoDeDados	: TDateTime;
-		tst	: String;
 begin
 	try
 		NUMERODIASHISTORICO := retornarVariavelInt('NumeroDiasHistorico',0);

@@ -20,10 +20,9 @@ unit UPedido;
 interface
 //-----------------------------------------------------------------------------------------------
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  ToolEdit, ExtCtrls, StdCtrls, Buttons, comctrls, Grids, DBCtrls, DB, Dialogs, SID,
-  Mask, DBGrids, UImpPedi, Menus, UFunDB, UFunGeral, DBTables, UPedidoFinalizacao,
-  UObservacao, UPedidoUltimo;
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, ExtCtrls, StdCtrls, Buttons,
+  comctrls, Grids, DBCtrls, DB, Dialogs, Mask, DBGrids, UImpPedi, Menus, UFunDB, UFunGeral,
+  DBTables, UPedidoFinalizacao, UObservacao, UPedidoUltimo;
 //-----------------------------------------------------------------------------------------------
 type
 	TfrmPedido = class(TForm)
@@ -170,8 +169,6 @@ type
 		reTotalizacao				: TRichEdit;
 		TRAVADIGI : bool;
 		MOSTRAJANELAOBSERVACOES : bool;
-		USABINA : bool;
-		AUTOBINA : bool;
 		MOSTRAGRADEPEDIABERTOS : bool;
 		GUARDADADOSTEMPPEDI    : bool;
 		MOSTRALISTAGEMDEPRODUTOS : bool;
@@ -213,8 +210,6 @@ type
 //-----------------------------------------------------------------------------------------------
 	public
 		{ Public declarations }
-		//-- procedimento p/ dar inicio na tranferencia de dados da bina
-		procedure InicioChamada(Sender : TObject);
 		//-- Mostra valor atual da variavel
 		function mostrarClienteVemDaJanelaDeClientes: Bool;
 		//-- Altera valor da variavel
@@ -368,8 +363,6 @@ begin
 		//-- Carrega variaveis do banco de dados
 		TRAVADIGI := FTabTele.retornarVariavelBool('TRAVADIGI','0');
 		MOSTRAJANELAOBSERVACOES := FTabTele.retornarVariavelBool('MOSTRAJANELAOBSERVACOES','0');
-		USABINA := FTabTele.retornarVariavelBool('USABINA','0');
-		AUTOBINA := FTabTele.retornarVariavelBool('AUTOBINA','1');
 		GUARDADADOSTEMPPEDI := FTabTele.retornarVariavelBool('GUARDADADOSTEMPPEDI','1');
 		MOSTRAGRADEPEDIABERTOS := FTabTele.retornarVariavelBool('MOSTRAGRADEPEDIABERTOS','1');
 		MOSTRALISTAGEMDEPRODUTOS := FTabTele.retornarVariavelBool('MOSTRALISTAGEMDEPRODUTOS','1');
@@ -559,37 +552,6 @@ begin
 		Finicial.abrirJanelaDeCliente(edtCodigo.Text,false,0);
 	end else begin
 		MessageDlg('É necessario selecionar um cliente para alterar seus dados', mtInformation, [mbOk], 0);
-	end;
-end;
-//-------------------------------------------------------------------------------------------------
-//-- procedimento p/ dar inicio na tranferencia de dados da bina
-procedure TfrmPedido.InicioChamada(Sender : TObject);
-var Telefone : String;
-begin
-  //-- Formato da String:
-  //-- exemplo1 1482461311 (com DDD)  - exemplo2 12461311   (sem DDD)
-  //-- exemplo3 14899971381 (celular) - exemplo3 7482448899 (TP)
-  try
-	 if length(SIDObj.Telefone) > 7 then begin
-		edtCodigo.Clear(); //-- Limpa campo de telefone
-		if length(SIDObj.Telefone) < 10 then
-        //-- Qdo a bina envia o número sem o DDD na frente
-        Telefone := Copy(SIDObj.Telefone,2,length(SIDObj.Telefone))
-      else
-        //-- Qdo a bina envia o número com o DDD na frente
-		  Telefone := Copy(SIDObj.Telefone,4,length(SIDObj.Telefone));
-      //-- Só carrega telefone se estiver sobre ETelefone
-		if edtCodigo.Focused then begin
-		  edtNome.setfocus;//-- alterna foco p/ fazer o sellength no campo telefone
-		  if (USABINA) then begin
-				edtCodigo.Text := Telefone;
-				if (AUTOBINA) then processarCliente();
-		  end;
-		  edtCodigo.setfocus;//-- alterna foco p/ fazer o sellength no campo telefone
-      end;
-    end;
-	except
-		MessageDlg('Erro ao receber chamada telefonica!', mtError, [mbOk], 0);
 	end;
 end;
 //-----------------------------------------------------------------------------------------------

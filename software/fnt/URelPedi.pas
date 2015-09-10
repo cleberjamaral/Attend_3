@@ -21,9 +21,8 @@ unit URelPedi;
 interface
 //-----------------------------------------------------------------------------------------------
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  RXCtrls, StdCtrls, ExtCtrls, DBTables, DB, qrprntr, Mask, ToolEdit,
-  RxLookup, Grids, DBGrids, Menus, URelatorio, ComCtrls, Buttons, UFunGeral,
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, ExtCtrls,
+  DBTables, DB, qrprntr, Mask, Grids, DBGrids, Menus, URelatorio, ComCtrls, Buttons, UFunGeral,
   DBCtrls;
 //-----------------------------------------------------------------------------------------------
 type

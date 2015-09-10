@@ -21,9 +21,9 @@ unit UPedidoUltimo;
 interface
 //-----------------------------------------------------------------------------------------------
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Grids, DBGrids, DB, DBTables, StdCtrls, ExtCtrls,
-  Mask, ToolEdit, Buttons, ComCtrls, CurrEdit, Menus, UImpPedi, UFunDB, UFunGeral, UTabTele;
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Grids, DBGrids, DB,
+  DBTables, StdCtrls, ExtCtrls, Mask, Buttons, ComCtrls, Menus, UImpPedi, UFunDB, UFunGeral,
+  UTabTele;
 //-----------------------------------------------------------------------------------------------
 type
   TfrmPedidoUltimo = class(TForm)

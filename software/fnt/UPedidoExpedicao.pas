@@ -20,9 +20,8 @@ unit UPedidoExpedicao;
 interface
 //-----------------------------------------------------------------------------------------------
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  DBCtrls, Menus, Mask, ToolEdit, StdCtrls, ExtCtrls,
-  Grids, DBGrids, DBTables, DB, Buttons, ComCtrls, UFunGeral, UFunDB;
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, DBCtrls, Menus,
+  Mask, StdCtrls, ExtCtrls, Grids, DBGrids, DBTables, DB, Buttons, ComCtrls, UFunGeral, UFunDB;
 //-----------------------------------------------------------------------------------------------
 type
   TfrmPedidoExpedicao = class(TForm)

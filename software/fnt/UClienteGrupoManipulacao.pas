@@ -4,8 +4,8 @@ interface
 //----------------------------------------------------------------------------------------------------------------
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  DB, DBTables, Mask, ToolEdit, StdCtrls, Grids, DBGrids, ExtCtrls,
-  Menus, CurrEdit, DBCtrls, UFunDB, Buttons;
+  DB, DBTables, Mask, StdCtrls, Grids, DBGrids, ExtCtrls,
+  Menus, DBCtrls, UFunDB, Buttons;
 //----------------------------------------------------------------------------------------------------------------
 type
 	TfrmClienteGrupoManipulacao = class(TForm)
@@ -28,7 +28,7 @@ type
 		gbValor: TGroupBox;
 		Label5: TLabel;
 		EPercent: TEdit;
-		CEValor: TCurrencyEdit;
+    CEValor: TEdit;
 		gbCodigo: TGroupBox;
 		labExemplo: TLabel;
 		meCodigo: TMaskEdit;
@@ -163,12 +163,12 @@ begin
 		//-- Decide como será feito com campo valor
 		if (rdbAcrescimo.Checked) then begin
 			if (rdbValor.Checked) then
-				novoValor := qryOrigem.FieldByName('Valor').AsFloat + CEValor.Value
+				novoValor := qryOrigem.FieldByName('Valor').AsFloat + StrToFloat(CEValor.Text)
 			else
 				novoValor := qryOrigem.FieldByName('Valor').AsFloat + (qryOrigem.FieldByName('Valor').AsFloat*StrToInt(EPercent.Text)/100);
 		end else begin
 			if (rdbValor.Checked) then
-				novoValor := qryOrigem.FieldByName('Valor').AsFloat - CEValor.Value
+				novoValor := qryOrigem.FieldByName('Valor').AsFloat - StrToFloat(CEValor.Text)
 			else
 				novoValor := qryOrigem.FieldByName('Valor').AsFloat - (qryOrigem.FieldByName('Valor').AsFloat*StrToInt(EPercent.Text)/100);
 		end;
