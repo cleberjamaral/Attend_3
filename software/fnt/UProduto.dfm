@@ -1,6 +1,6 @@
 object frmProduto: TfrmProduto
-  Left = 399
-  Top = 143
+  Left = 901
+  Top = 200
   Width = 534
   Height = 353
   Caption = 'Produto'
@@ -24,7 +24,7 @@ object frmProduto: TfrmProduto
     Left = 0
     Top = 41
     Width = 526
-    Height = 266
+    Height = 258
     ActivePage = tshConsult
     Align = alClient
     TabOrder = 0
@@ -34,7 +34,7 @@ object frmProduto: TfrmProduto
         Left = 0
         Top = 0
         Width = 518
-        Height = 238
+        Height = 230
         Align = alClient
         DataSource = dsqDefault
         TabOrder = 0
@@ -105,7 +105,7 @@ object frmProduto: TfrmProduto
         Left = 0
         Top = 0
         Width = 518
-        Height = 238
+        Height = 230
         Align = alClient
         TabOrder = 0
         object labNome: TLabel

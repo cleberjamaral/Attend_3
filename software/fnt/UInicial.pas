@@ -162,14 +162,20 @@ end;
 //-----------------------------------------------------------------------------------------------
 procedure TFInicial.BtCadProdClick(Sender: TObject);
 begin
-	if not verificarSeFormEstaAberto('FrmProduto') then
-	begin
-		Application.CreateForm(TfrmProduto,frmProduto);
-	end
-	else
-	begin
-		frmProduto.WindowState := wsNormal;
-		frmProduto.Show();
+	if (mostrarJaneladeAcesso(
+			nomeSoft,
+			ACESSOUSUARIO01,
+			ACESSOSENHA01
+	)) then begin
+        	if not verificarSeFormEstaAberto('FrmProduto') then
+        	begin
+        		Application.CreateForm(TfrmProduto,frmProduto);
+        	end
+        	else
+        	begin
+        		frmProduto.WindowState := wsNormal;
+        		frmProduto.Show();
+        	end;
 	end;
 end;
 //-----------------------------------------------------------------------------------------------

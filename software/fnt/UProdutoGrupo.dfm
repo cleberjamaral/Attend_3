@@ -1,6 +1,6 @@
 object frmProdutoGrupo: TfrmProdutoGrupo
-  Left = 437
-  Top = 263
+  Left = 869
+  Top = 364
   Width = 335
   Height = 282
   Caption = 'Grupo de Produtos'
@@ -104,7 +104,7 @@ object frmProdutoGrupo: TfrmProdutoGrupo
     Left = 0
     Top = 41
     Width = 327
-    Height = 195
+    Height = 187
     ActivePage = tshConsult
     Align = alClient
     TabOrder = 1
@@ -114,7 +114,7 @@ object frmProdutoGrupo: TfrmProdutoGrupo
         Left = 0
         Top = 0
         Width = 319
-        Height = 167
+        Height = 159
         Hint = 
           'Consulta de Registros, 2 cliques na grade abre o cadastro no reg' +
           'istro selecionado'
