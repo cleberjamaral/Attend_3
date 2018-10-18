@@ -18,7 +18,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # Delphi compiled and temporary files
-# *.dcu
+*.dcu
+*.MB
 *.~pas
 *.~dfm
 *.~dpr
