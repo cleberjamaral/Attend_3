@@ -17,6 +17,12 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Delphi compiled and temporary files
+# *.dcu
+*.~pas
+*.~dfm
+*.~dpr
+
 # =========================
 # Operating System Files
 # =========================
