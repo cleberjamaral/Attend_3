@@ -1,7 +1,3 @@
-#Licença de uso
-- Este é um software gratuito, pode ser redistribuído e ou modificado.
-- Este software é distribuído na esperança de ser útil mas SEM NENHUMA GARANTIA sobre o que é proposto ou que execute uma função particular ou ainda que seja disponibilizado qualquer tipo de suporte. O uso deste software está por conta e risco do usuário, não cabendo aos desenvolvedores ou a quem está disponibilizando este software publicamente qualquer responsabilidade. O uso deste software está condicionado a estes dispostos.
-
 # Attend_3
 Software for attendance of deliveries stores and service desk.
 
@@ -28,6 +24,10 @@ Características Principais:
 - Opção para divisão da conta para mesas e comandas.
 - Banco de dados seguro (SGDB).
 - Para mais detalhes consulte a seção Dicas e Tutoriais.
+
+# Licença de uso
+- Este é um software gratuito, pode ser redistribuído e ou modificado.
+- Este software é distribuído na esperança de ser útil mas SEM NENHUMA GARANTIA sobre o que é proposto ou que execute uma função particular ou ainda que seja disponibilizado qualquer tipo de suporte. O uso deste software está por conta e risco do usuário, não cabendo aos desenvolvedores ou a quem está disponibilizando este software publicamente qualquer responsabilidade. O uso deste software está condicionado a estes dispostos.
 
 # Orientações para desenvolvedores
 - Este programa foi desenvolvido no Borland Delphi 5 (32 bits)
