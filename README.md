@@ -1,5 +1,5 @@
 #Licença de uso
-- Este é um software gratuito: pode ser reditribuído e ou modificado.
+- Este é um software gratuito, pode ser redistribuído e ou modificado.
 - Este software é distribuído na esperança de ser útil mas SEM NENHUMA GARANTIA sobre o que é proposto ou que execute uma função particular ou ainda que seja disponibilizado qualquer tipo de suporte. O uso deste software está por conta e risco do usuário, não cabendo aos desenvolvedores ou a quem está disponibilizando este software publicamente qualquer responsabilidade. O uso deste software está condicionado a estes dispostos.
 
 # Attend_3
@@ -15,7 +15,7 @@ Características Principais:
 
 - Controle de brindes.
 - Controla expedição por entregador.
--Integrável a BINA*.
+- Integrável a BINA*.
 - Suporta pedidos em aberto (orçamento).
 - Controla Mesas e Comandas.
 - Impressão de conta com 10% de serviço.
@@ -30,6 +30,6 @@ Características Principais:
 - Para mais detalhes consulte a seção Dicas e Tutoriais.
 
 # Orientações para desenvolvedores
-- Este programa foi desenvolvido no Dorland Delphi 5 (32 bits)
+- Este programa foi desenvolvido no Borland Delphi 5 (32 bits)
 - O banco de dados padrão é o Firebird 2.1, foi testado com o Firebird ODBC 2.0, ambos 32 bits.
 - O ALIAS de banco de dados padrão se chama "commerce", devendo apontar para o banco "commerce.fdb"
