@@ -1,8 +1,8 @@
 object frmMensagemLicenca: TfrmMensagemLicenca
   Left = 400
   Top = 307
-  Width = 314
-  Height = 133
+  Width = 330
+  Height = 148
   BorderIcons = [biSystemMenu]
   Caption = 'Mensagem Licença'
   Color = clBtnFace
@@ -17,7 +17,7 @@ object frmMensagemLicenca: TfrmMensagemLicenca
   PixelsPerInch = 96
   TextHeight = 13
   object memMensagem: TMemo
-    Left = 8
+    Left = 16
     Top = 8
     Width = 289
     Height = 49
@@ -32,7 +32,7 @@ object frmMensagemLicenca: TfrmMensagemLicenca
     TabOrder = 0
   end
   object btnRegistrarDepois: TBitBtn
-    Left = 72
+    Left = 80
     Top = 72
     Width = 161
     Height = 25
@@ -43,7 +43,7 @@ object frmMensagemLicenca: TfrmMensagemLicenca
   end
   object timLicenca: TTimer
     OnTimer = timLicencaTimer
-    Left = 8
+    Left = 16
     Top = 64
   end
 end
